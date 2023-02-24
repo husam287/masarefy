@@ -5,7 +5,7 @@ import { I18nManager, StyleSheet, Text } from 'react-native';
 
 const styles = StyleSheet.create({
   textStyle: {
-    color: COLORS.light,
+    color: COLORS.dark,
     writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr',
     ...GLOBAL_STYLES.font400,
   },

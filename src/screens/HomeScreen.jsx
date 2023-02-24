@@ -1,54 +1,132 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { useNavigation } from '@react-navigation/native';
-import * as YUP from 'yup';
-
 import ScreenWrapper from 'components/general/ScreenWrapper';
-import ButtonComponent from 'components/general/ButtonComponent';
-import ControllableInput from 'components/general/inputs/ControllableInput';
-import ColoredText from 'components/home-components/ColoredText';
-import showSuccessMsg from 'hooks/showSuccessMsg';
-
-const styles = StyleSheet.create({
-  spaceTop10: {
-    marginTop: 10,
-  },
-});
+import { Feather, FontAwesome5 } from '@expo/vector-icons';
+import {
+  Box, Column, Row, Text,
+} from 'native-base';
+import COLORS from 'constants/Colors';
+import { ScrollView, TouchableOpacity } from 'react-native';
+import ExpenseBox from 'components/home-components/ExpenseBox';
 
 export default function HomeScreen() {
-  const navigation = useNavigation();
-  const schema = YUP.object().shape({
-    test: YUP.string().required(),
-  });
+  const onSeeAllExpenses = () => {
 
-  const { control, handleSubmit } = useForm({
-    resolver: yupResolver(schema),
-  });
-
-  const onSubmit = (value) => {
-    console.log(value);
-    showSuccessMsg('Done!');
-    navigation.navigate('testScreen');
   };
 
   return (
     <ScreenWrapper>
-      <ColoredText />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Box
+          bg={{
+            linearGradient: {
+              colors: ['lightBlue.500', 'violet.700'],
+              start: [0, 0],
+              end: [1, 0],
+            },
+          }}
+          p="4"
+          rounded="xl"
+        >
+          <Text
+            fontSize="xs"
+            color={COLORS.light}
+            textAlign="center"
+          >
+            Total Expenses
+          </Text>
 
-      <ControllableInput
-        name="test"
-        control={control}
-        placeholderText="test"
-      />
+          <Row justifyContent="center" alignItems="center">
+            <Text
+              fontSize="xs"
+              color={COLORS.light}
+            >
+              EGP
+            </Text>
+            <Text
+              fontSize="xl"
+              ml="1"
+              color={COLORS.light}
+            >
+              300,000,000
+            </Text>
+          </Row>
 
-      <ButtonComponent
-        buttonCustomStyle={styles.spaceTop10}
-        title="Submit"
-        onPress={handleSubmit(onSubmit)}
-      />
+          <Box
+            p="4"
+            rounded="xl"
+            mt="5"
+            bgColor={`${COLORS.dark}66`}
+          >
+            <Row alignItems="center" justifyContent="space-between">
+              <Column alignItems="center">
+                <Row alignItems="center">
+                  <Feather name="arrow-down" size={14} color={COLORS.danger} />
+                  <Text
+                    fontSize="xs"
+                    color={COLORS.light}
+                    ml="1"
+                  >
+                    Total Expenses
 
+                  </Text>
+                </Row>
+                <Text
+                  fontSize="md"
+                  color={COLORS.light}
+                >
+                  3000
+                </Text>
+              </Column>
+
+              <Column alignItems="center">
+                <Row alignItems="center">
+                  <FontAwesome5 name="exclamation" size={14} color={COLORS.danger} />
+                  <Text
+                    fontSize="xs"
+                    ml="1"
+                    color={COLORS.light}
+                  >
+                    Days Missing
+
+                  </Text>
+                </Row>
+                <Text
+                  fontSize="md"
+                  color={COLORS.light}
+                >
+                  2
+                </Text>
+              </Column>
+            </Row>
+          </Box>
+        </Box>
+
+        <Row mt="10" mb="3" alignItems="center" justifyContent="space-between">
+          <Text
+            fontSize="lg"
+            color={COLORS.dark}
+          >
+            Recent Expenses
+          </Text>
+
+          <TouchableOpacity onPress={onSeeAllExpenses}>
+            <Text
+              fontSize="md"
+              p="4"
+              pr="0"
+              color={COLORS.secondary}
+            >
+              See All
+            </Text>
+          </TouchableOpacity>
+        </Row>
+
+        <ExpenseBox
+          expenseTitle="Lunch"
+          money={340}
+          date="Today"
+        />
+      </ScrollView>
     </ScreenWrapper>
   );
 }

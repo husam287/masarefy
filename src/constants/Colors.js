@@ -6,8 +6,8 @@ const COLORS = {
   secondary: theme.colors.secondary[500],
   grey: theme.colors.gray[500],
   darkGrey: theme.colors.gray[900],
-  dark: theme.colors.dark[500],
-  light: '#fff',
+  dark: '#000000',
+  light: '#ffffff',
 
   // system message colors
   success: theme.colors.success[500],
