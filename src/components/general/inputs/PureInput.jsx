@@ -55,6 +55,9 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
   spaceAround: { marginHorizontal: 5 },
+  spaceEnd: {
+    marginEnd: 5,
+  },
 });
 
 export default function PureInput({
@@ -144,7 +147,11 @@ export default function PureInput({
   return (
     <>
       <View pointerEvents={pointerEventValue} style={inputContainerStyles}>
-        {prefix || null}
+        {!!prefix && (
+        <View style={styles.spaceEnd}>
+          {prefix}
+        </View>
+        )}
 
         <TextInput
           onChangeText={onChange}

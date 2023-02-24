@@ -5,8 +5,8 @@ import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
 import Metrics from 'constants/Metrics';
 import HomeScreen from 'screens/HomeScreen';
 import CoursesScreen from 'screens/CoursesScreen';
-import ProfileScreen from 'screens/ProfileScreen';
 import COLORS from 'constants/Colors';
+import AddExpenses from 'screens/AddExpenses';
 import RouterOption from '../header-options/RouterOption';
 import TapbarComponent from '../header-options/TapbarComponent';
 
@@ -28,7 +28,7 @@ function HomeTabBarElement({ focused }) {
   );
 }
 
-function ProfileTabBarElement({ focused }) {
+function AddExpensesTabBarElement({ focused }) {
   return (
     <TapbarComponent
       iconComponent={(
@@ -86,13 +86,13 @@ export default function BottomNavigator() {
 
       {/* Profile  */}
       <BottomTab.Screen
-        name="Profile"
+        name="AddExpenses"
         options={({ navigation }) => RouterOption({
           navigation,
-          title: 'Profile',
-          tabBarIcon: ProfileTabBarElement,
+          title: 'Add New Expenses',
+          tabBarIcon: AddExpensesTabBarElement,
         })}
-        component={ProfileScreen}
+        component={AddExpenses}
       />
 
       {/* Courses */}
