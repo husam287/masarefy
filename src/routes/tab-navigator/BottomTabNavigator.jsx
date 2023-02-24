@@ -1,10 +1,12 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
 
 import Metrics from 'constants/Metrics';
 import HomeScreen from 'screens/HomeScreen';
 import CoursesScreen from 'screens/CoursesScreen';
 import ProfileScreen from 'screens/ProfileScreen';
+import COLORS from 'constants/Colors';
 import RouterOption from '../header-options/RouterOption';
 import TapbarComponent from '../header-options/TapbarComponent';
 
@@ -13,8 +15,13 @@ const TABWIDTH = Metrics.screenWidth / 3;
 function HomeTabBarElement({ focused }) {
   return (
     <TapbarComponent
-      title="Home"
-      iconName="home"
+      iconComponent={(
+        <AntDesign
+          name="home"
+          size={22}
+          color={focused ? COLORS.primary : COLORS.dark}
+        />
+      )}
       isFocused={focused}
       tabWidth={TABWIDTH}
     />
@@ -24,8 +31,13 @@ function HomeTabBarElement({ focused }) {
 function ProfileTabBarElement({ focused }) {
   return (
     <TapbarComponent
-      title="Profile"
-      iconName="user"
+      iconComponent={(
+        <MaterialCommunityIcons
+          name="plus-circle-multiple-outline"
+          size={22}
+          color={focused ? COLORS.primary : COLORS.dark}
+        />
+      )}
       isFocused={focused}
       tabWidth={TABWIDTH}
     />
@@ -35,8 +47,13 @@ function ProfileTabBarElement({ focused }) {
 function CoursesTabBarElement({ focused }) {
   return (
     <TapbarComponent
-      title="Courses"
-      iconName="heart_outline"
+      iconComponent={(
+        <AntDesign
+          name="calendar"
+          size={22}
+          color={focused ? COLORS.primary : COLORS.dark}
+        />
+      )}
       isFocused={focused}
       tabWidth={TABWIDTH}
     />

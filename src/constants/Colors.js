@@ -1,16 +1,17 @@
+import { theme } from 'native-base';
+
 const COLORS = {
   // Main Colors
-  primary: '#74AFD4',
-  secondary: '#1A237E',
-  grey: '#B9BCBE',
-  darkGrey: 'rgba(185, 188, 190, 1)',
-  lightBlue: '#C0DAFF',
-  dark: '#343a40',
+  primary: theme.colors.primary[500],
+  secondary: theme.colors.secondary[500],
+  grey: theme.colors.gray[500],
+  darkGrey: theme.colors.gray[900],
+  dark: theme.colors.dark[500],
   light: '#fff',
 
   // system message colors
-  success: '#38c976',
-  danger: '#ff5050',
+  success: theme.colors.success[500],
+  danger: theme.colors.danger[500],
 };
 
 export default COLORS;

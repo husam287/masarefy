@@ -10,10 +10,6 @@ import ButtonComponent from 'components/general/ButtonComponent';
 import ControllableInput from 'components/general/inputs/ControllableInput';
 import ColoredText from 'components/home-components/ColoredText';
 import showSuccessMsg from 'hooks/showSuccessMsg';
-import FacebookRegisterationButton from 'components/auth-components/FacebookRegisterationButton';
-import AppleRegisterationButton from 'components/auth-components/AppleRegisterationButton';
-// import { useFetch } from 'hooks/useFetch'
-// import { ProductEndpoints } from 'apis/endpoints/ProductEndpoints'
 
 const styles = StyleSheet.create({
   spaceTop10: {
@@ -23,7 +19,6 @@ const styles = StyleSheet.create({
 
 export default function HomeScreen() {
   const navigation = useNavigation();
-  // const [{ loading, response }] = useFetch(ProductEndpoints.getCategories())
   const schema = YUP.object().shape({
     test: YUP.string().required(),
   });
@@ -54,8 +49,6 @@ export default function HomeScreen() {
         onPress={handleSubmit(onSubmit)}
       />
 
-      <FacebookRegisterationButton />
-      <AppleRegisterationButton />
     </ScreenWrapper>
   );
 }
