@@ -17,16 +17,16 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "scheme": "fb581500183717057",
+    "scheme": "com.hossam.masarefy",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.bit68.hossam",
+      "bundleIdentifier": "com.hossam.masarefy",
       "infoPlist": {
         "CFBundleAllowMixedLocalizations": true
       }
     },
     "android": {
-      "package": "com.bit68.hossam",
+      "package": "com.hossam.masarefy",
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"

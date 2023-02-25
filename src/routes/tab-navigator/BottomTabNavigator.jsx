@@ -6,6 +6,7 @@ import HomeScreen from 'screens/HomeScreen';
 import COLORS from 'constants/Colors';
 import AddExpenses from 'screens/AddExpenses';
 import Statistics from 'screens/StatisticsScreen';
+import Settings from 'screens/SettingsScreen';
 import RouterOption from '../header-options/RouterOption';
 import TapbarComponent from '../header-options/TapbarComponent';
 
@@ -49,6 +50,22 @@ function StatisticsTabBarElement({ focused }) {
       iconComponent={(
         <Feather
           name="pie-chart"
+          size={22}
+          color={focused ? COLORS.primary : COLORS.dark}
+        />
+      )}
+      isFocused={focused}
+      tabWidth={TABWIDTH}
+    />
+  );
+}
+
+function SettingTabBarElement({ focused }) {
+  return (
+    <TapbarComponent
+      iconComponent={(
+        <Feather
+          name="settings"
           size={22}
           color={focused ? COLORS.primary : COLORS.dark}
         />
@@ -103,6 +120,17 @@ export default function BottomNavigator() {
           tabBarIcon: StatisticsTabBarElement,
         })}
         component={Statistics}
+      />
+
+      {/* SETIING */}
+      <BottomTab.Screen
+        name="Settings"
+        options={({ navigation }) => RouterOption({
+          navigation,
+          title: 'Settings',
+          tabBarIcon: SettingTabBarElement,
+        })}
+        component={Settings}
       />
     </BottomTab.Navigator>
   );
