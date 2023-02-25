@@ -14,7 +14,7 @@ import ScreenWrapper from 'components/general/ScreenWrapper';
 import CustomText from 'components/general/CustomText';
 import ClickableRow from 'components/general/ClickableRow';
 import COLORS from 'constants/Colors';
-import GeneralDbService from 'services/GeneralDbService';
+// import GeneralDbService from 'services/GeneralDbService';
 
 const styles = StyleSheet.create({
   centering: {
@@ -85,9 +85,9 @@ function ProfileScreen() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fullResult]);
 
-  const onReset = () => {
-    GeneralDbService.removeDb();
-  };
+  // const onReset = () => {
+  //   GeneralDbService.removeDb();
+  // };
 
   return (
     <ScreenWrapper>
@@ -111,10 +111,10 @@ function ProfileScreen() {
             onPress={onLoadBackup}
           />
 
-          <ClickableRow
+          {/* <ClickableRow
             text="RESET"
             onPress={onReset}
-          />
+          /> */}
         </View>
       </ScrollView>
     </ScreenWrapper>
