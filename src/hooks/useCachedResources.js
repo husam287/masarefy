@@ -7,6 +7,9 @@ import font500 from 'assets/fonts/Changa-Medium.ttf';
 import font600 from 'assets/fonts/Changa-SemiBold.ttf';
 import font700 from 'assets/fonts/Changa-Bold.ttf';
 import * as SplashScreen from 'expo-splash-screen';
+import GeneralDbService from 'services/GeneralDbService';
+
+const initDb = () => GeneralDbService.initAllTables();
 
 export default function useCachedResources() {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
@@ -25,6 +28,8 @@ export default function useCachedResources() {
           font600,
           font700,
         });
+
+        await initDb();
       } catch (e) {
         // We might want to provide this error information to an error reporting service
       } finally {

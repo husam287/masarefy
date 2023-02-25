@@ -11,7 +11,6 @@ import useCheckNewUpdates from 'hooks/useCheckNewUpdate';
 import COLORS from 'constants/Colors';
 import NotificationListnerContainer from 'components/general/NotificationListnerContainer';
 import SnackbarComponent from 'components/general/SnackbarComponent';
-import GeneralDbService from 'services/GeneralDbService';
 import MainStack from './stacks/MainStack';
 
 function Route() {
@@ -25,17 +24,12 @@ function Route() {
     I18nManager.forceRTL(false);
   };
 
-  const initDb = () => {
-    GeneralDbService.initAllTables();
-  };
-
   // Non user login
   useEffect(() => {
     const bootstrapAsync = async () => {
       const userToken = await AsyncStorage.getItem('token');
       dispatch(login(userToken));
       initiallizeLang();
-      initDb();
     };
 
     bootstrapAsync();

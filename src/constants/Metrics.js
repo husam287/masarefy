@@ -7,8 +7,8 @@ const HEIGHT = Dimensions.get('window').height;
 const METRICS = {
   screenWidth: WIDTH,
   screenHeight: HEIGHT,
-  bottomTabsHeight: 50,
-  mainArroundSpacing: WIDTH * 0.056,
+  bottomTabsHeight: 70,
+  mainArroundSpacing: WIDTH * 0.036,
   headerHeight: getStatusBarHeight() + 30,
 };
 

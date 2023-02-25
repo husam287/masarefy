@@ -6,6 +6,7 @@ import store from 'reducers';
 import useCachedResources from 'hooks/useCachedResources';
 import { NativeBaseProvider } from 'native-base';
 import { LinearGradient } from 'expo-linear-gradient';
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -20,6 +21,7 @@ export default function App() {
     isLoadingComplete && (
       <Provider store={store}>
         <NativeBaseProvider config={config}>
+          <StatusBar />
           <Route />
         </NativeBaseProvider>
       </Provider>

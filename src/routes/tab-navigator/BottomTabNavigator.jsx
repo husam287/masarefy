@@ -18,7 +18,7 @@ function HomeTabBarElement({ focused }) {
       iconComponent={(
         <AntDesign
           name="home"
-          size={22}
+          size={24}
           color={focused ? COLORS.primary : COLORS.dark}
         />
       )}
@@ -34,7 +34,7 @@ function AddExpensesTabBarElement({ focused }) {
       iconComponent={(
         <MaterialCommunityIcons
           name="plus-circle-multiple-outline"
-          size={22}
+          size={24}
           color={focused ? COLORS.primary : COLORS.dark}
         />
       )}
@@ -50,7 +50,7 @@ function StatisticsTabBarElement({ focused }) {
       iconComponent={(
         <Feather
           name="pie-chart"
-          size={22}
+          size={24}
           color={focused ? COLORS.primary : COLORS.dark}
         />
       )}
@@ -66,7 +66,7 @@ function SettingTabBarElement({ focused }) {
       iconComponent={(
         <Feather
           name="settings"
-          size={22}
+          size={24}
           color={focused ? COLORS.primary : COLORS.dark}
         />
       )}

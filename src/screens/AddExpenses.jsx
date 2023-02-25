@@ -35,7 +35,7 @@ function AddExpenses() {
     ExpenseService.insertInto({
       money: value.money,
       reason: value.reason,
-      date: moment().format('YYYY-MM-dd'),
+      date: moment().format('YYYY-MM-DD'),
     }).then(() => {
       reasonFieldRef.current.focus();
       reset();

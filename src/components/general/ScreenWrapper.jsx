@@ -8,15 +8,16 @@ import {
 } from 'react-native';
 
 import COLORS from 'constants/Colors';
-import Metrics from 'constants/Metrics';
 import GLOBAL_STYLES from 'constants/GlobalStyles';
+import METRICS from 'constants/Metrics';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-between',
-    padding: Metrics.screenWidth * 0.056,
-    width: Metrics.screenWidth,
+    padding: METRICS.mainArroundSpacing,
+    paddingBottom: 0,
+    width: METRICS.screenWidth,
   },
   innerConatiner: {
     backgroundColor: COLORS.light,
@@ -49,7 +50,7 @@ export default function ScreenWrapper({
           <KeyboardAvoidingView
             style={GLOBAL_STYLES.fullSize}
             behavior="padding"
-            keyboardVerticalOffset={!noKeyboardVerticalOffset ? Metrics.headerHeight : 0}
+            keyboardVerticalOffset={!noKeyboardVerticalOffset ? METRICS.headerHeight : 0}
           >
             {MainContentMarkup}
           </KeyboardAvoidingView>
