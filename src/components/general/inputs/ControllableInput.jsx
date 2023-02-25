@@ -5,6 +5,8 @@ import PureInput from './PureInput';
 
 export default function ControllableInput({
   control,
+  innerRef,
+  onSubmit,
   name,
   editable = true,
   customContainerStyle,
@@ -26,6 +28,8 @@ export default function ControllableInput({
       name={name}
       render={({ field: { onChange, onBlur, value }, fieldState }) => (
         <PureInput
+          innerRef={innerRef}
+          onSubmit={onSubmit}
           onChange={onChange}
           onBlur={onBlur}
           value={value}

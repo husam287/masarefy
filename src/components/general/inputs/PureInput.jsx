@@ -62,6 +62,8 @@ const styles = StyleSheet.create({
 
 export default function PureInput({
   error,
+  onSubmit = () => {},
+  innerRef,
   editable = true,
   customContainerStyle,
   prefix,
@@ -154,8 +156,10 @@ export default function PureInput({
         )}
 
         <TextInput
+          ref={innerRef}
           onChangeText={onChange}
           onBlur={onBlur}
+          onSubmitEditing={onSubmit}
           placeholder={placeholderText}
           value={value}
           textContentType={inputType}

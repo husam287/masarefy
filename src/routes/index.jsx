@@ -4,6 +4,7 @@ import { I18nManager } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Toast from 'react-native-toast-message';
 
 import { login } from 'reducers/authReducer';
 import useCheckNewUpdates from 'hooks/useCheckNewUpdate';
@@ -56,6 +57,7 @@ function Route() {
         <NotificationListnerContainer>
           <MainStack />
 
+          <Toast />
           <SnackbarComponent />
         </NotificationListnerContainer>
       </NavigationContainer>

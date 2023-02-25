@@ -1,11 +1,11 @@
-import store from 'reducers';
-import { setDangerToast } from 'reducers/appReducer';
+import Toast from 'react-native-toast-message';
 
 export default function HandleErrors(err) {
   const showErrorToast = (msg) => {
-    store.dispatch(
-      setDangerToast(msg),
-    );
+    Toast.show({
+      type: 'error',
+      text1: msg,
+    });
   };
 
   console.log('Catched Error', err);
