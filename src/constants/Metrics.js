@@ -8,6 +8,7 @@ const METRICS = {
   screenWidth: WIDTH,
   screenHeight: HEIGHT,
   bottomTabsHeight: 50,
+  mainArroundSpacing: WIDTH * 0.056,
   headerHeight: getStatusBarHeight() + 30,
 };
 

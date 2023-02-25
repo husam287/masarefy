@@ -1,12 +1,11 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
-
+import { AntDesign, MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 import Metrics from 'constants/Metrics';
 import HomeScreen from 'screens/HomeScreen';
-import CoursesScreen from 'screens/CoursesScreen';
 import COLORS from 'constants/Colors';
 import AddExpenses from 'screens/AddExpenses';
+import Statistics from 'screens/StatisticsScreen';
 import RouterOption from '../header-options/RouterOption';
 import TapbarComponent from '../header-options/TapbarComponent';
 
@@ -44,12 +43,12 @@ function AddExpensesTabBarElement({ focused }) {
   );
 }
 
-function CoursesTabBarElement({ focused }) {
+function StatisticsTabBarElement({ focused }) {
   return (
     <TapbarComponent
       iconComponent={(
-        <AntDesign
-          name="calendar"
+        <Feather
+          name="pie-chart"
           size={22}
           color={focused ? COLORS.primary : COLORS.dark}
         />
@@ -95,15 +94,15 @@ export default function BottomNavigator() {
         component={AddExpenses}
       />
 
-      {/* Courses */}
+      {/* Statistics */}
       <BottomTab.Screen
-        name="Courses"
+        name="Statistics"
         options={({ navigation }) => RouterOption({
           navigation,
-          title: 'Courses',
-          tabBarIcon: CoursesTabBarElement,
+          title: 'Statistics',
+          tabBarIcon: StatisticsTabBarElement,
         })}
-        component={CoursesScreen}
+        component={Statistics}
       />
     </BottomTab.Navigator>
   );
