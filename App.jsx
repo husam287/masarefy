@@ -1,3 +1,4 @@
+/* eslint-disable react/style-prop-object */
 import React from 'react';
 import { Provider } from 'react-redux';
 
@@ -21,7 +22,7 @@ export default function App() {
     isLoadingComplete && (
       <Provider store={store}>
         <NativeBaseProvider config={config}>
-          <StatusBar />
+          <StatusBar translucent style="dark" />
           <Route />
         </NativeBaseProvider>
       </Provider>
