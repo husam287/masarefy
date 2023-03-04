@@ -80,6 +80,7 @@ export default function PureInput({
   textArea,
   customInputStyle,
   hintText,
+  customColorInDisableState,
 }) {
   const [showPassword, setShowPassword] = useState(false);
   const hasErrors = Boolean(error);
@@ -141,7 +142,8 @@ export default function PureInput({
   const inputStyles = [
     styles.input,
     customInputStyle && { ...customInputStyle },
-    !editable && { color: COLORS.darkGrey }, // override color when disabled
+    !editable
+    && { color: customColorInDisableState || COLORS.darkGrey }, // override color when disabled
   ];
 
   const placeholderTextColorValue = placeholderTextColor || COLORS.grey;
