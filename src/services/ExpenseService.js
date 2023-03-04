@@ -70,7 +70,7 @@ export default class ExpenseService {
   }
 
   static getAll() {
-    const query = 'SELECT * FROM Expense';
+    const query = 'SELECT * FROM Expense ORDER BY date(date) DESC, id DESC';
 
     const promise = new Promise((resolve, reject) => {
       db.transaction((tx) => {
